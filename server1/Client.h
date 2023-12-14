@@ -5,6 +5,7 @@
 #include <QtNetwork/QTcpServer>
 #include <QtNetwork/QTcpSocket>
 #include <QTimer>
+#include <QDataStream>
 
 
 class Client : public QObject

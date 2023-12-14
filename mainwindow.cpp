@@ -8,12 +8,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->pushButton_disconnect->setVisible(false);
 
     client = new Client(nullptr, "localhost", 6547);
-
     setStatus(client->getStatus());
 
     connect(client, &Client::hasReadSome, this, &MainWindow::receivedSomething);
     connect(client, &Client::statusChanged, this, &MainWindow::setStatus);
-    connect(client->m_socket, &QTcpSocket::errorOccurred, this, &Client::gotError);
+    //connect(client->m_socket, &QTcpSocket::errorOccurred, this, &Client::gotError);
 
 }
 
